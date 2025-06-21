@@ -1,13 +1,33 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-//
-// import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+//import Navbar from './components/Navbar';
+//import Skills from './Skill';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import About from './pages/About';
+import State from './hooks/State';
+//import Form from './hooks/Form';
 
-function App() {
-  
+const App = () => {
+  const mySkills = ['java', 'html', 'c#', 'python'];
 
-  return ('sanjay')
-}
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/state' element={<State />} />
+        <Route path='/form' element={<Form />} />
+      </Routes>
 
-export default App
+      <div>
+        <h1>Welcome to My Portfolio</h1>
+        <Skills skill={mySkills} />
+      </div>
+    </>
+  );
+};
+
+export default App;
